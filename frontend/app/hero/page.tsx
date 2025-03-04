@@ -149,16 +149,6 @@ export default function Hero() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div>
-        <Image
-        src="/assets/hero-background.png"
-        alt='backgroud image'
-        width={100}
-        height={100}
-        className='w-full z-[-1]'>
-        </Image>
-      </motion.div>
       </div>
     </section>
   )
