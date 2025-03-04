@@ -104,7 +104,7 @@ export default function Header() {
           </motion.div>
 
           {/* Right Side Icons */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 ">
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -125,7 +125,7 @@ export default function Header() {
               >
                 <motion.div
                   animate={isOpen ? "open" : "closed"}
-                  className="w-6 h-6"
+                  className="w-6 h-6 flex"
                 >
                   {[0, 1, 2].map((i) => (
                     <motion.span
@@ -155,9 +155,9 @@ export default function Header() {
             duration: 0.3,
             ease: 'easeInOut'
           }}
-          className="md:hidden overflow-hidden"
+          className="md:hidden overflow-hidden bg-gradient-to-r from-red-500 to-red-800"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="px-2 pt-2 pb-3 space-y-1 ">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -178,13 +178,7 @@ export default function Header() {
               </motion.div>
             ))}
             
-            {/* Mobile Login Button */}
-            <motion.button
-              className="w-full mt-4 flex items-center justify-center space-x-2 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-300"
-            >
-              <FontAwesomeIcon icon={faUser} className="w-4 h-4" />
-              <span className="text-sm font-medium">Login</span>
-            </motion.button>
+           
           </div>
         </motion.div>
       </nav>
