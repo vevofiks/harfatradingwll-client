@@ -16,7 +16,7 @@ export default function Footer() {
           </div>
           <div className="flex gap-6">
             {socialLinks.map((link, index) => (
-              <a 
+              <a
                 key={index}
                 href={link.url} 
                 className="text-2xl hover:text-blue-500 transition-colors"

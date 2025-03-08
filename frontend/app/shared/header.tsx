@@ -10,8 +10,7 @@ import {
   faInfoCircle, 
   faStar, 
   faPhone,
-  faUser,
-  faSearch
+  
 } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
@@ -35,7 +34,7 @@ export default function Header() {
     { name: 'Products', href: '#products', icon: faCar },
     { name: 'About', href: '#about', icon: faInfoCircle },
     { name: 'Reviews', href: '#reviews', icon: faStar },
-    { name: 'Contact', href: '#contact', icon: faPhone },
+    { name: 'Contact', href: '/contact', icon: faPhone },
   ]
 
   return (

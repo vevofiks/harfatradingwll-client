@@ -11,7 +11,7 @@ import {
   faStar as faStarSolid 
 } from '@fortawesome/free-solid-svg-icons'
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons'
-import './reviews.css'
+import '../styles/reviews.css'
 
 interface Review {
   id: number
