@@ -1,28 +1,29 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { 
-  faHome, 
-  faCar, 
-  faInfoCircle, 
-  faStar, 
+import {
+  faHome,
+  faCar,
+  faInfoCircle,
+  faStar,
   faPhone,
-  
+
 } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const { scrollY } = useScroll()
-  
+
   const backgroundColor = useTransform(
     scrollY,
     [0, 100],
     ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.8)']
   )
-  
+
   const backdropBlur = useTransform(
     scrollY,
     [0, 100],
@@ -54,13 +55,16 @@ export default function Header() {
             transition={{ duration: 0.5 }}
             className="flex-shrink-0"
           >
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="flex items-center space-x-3 group"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-red-500/20">
-                <FontAwesomeIcon icon={faCar} className="text-white text-2xl" />
-              </div>
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-red-500/20">
+                <Image src="/assets/logo1.png"
+                  alt='log'
+                  width={50}
+                  height={50}>
+                </Image>              </div>
               <div>
                 <div className="text-2xl font-bold text-white leading-none">
                   HARFA
@@ -176,8 +180,8 @@ export default function Header() {
                 </Link>
               </motion.div>
             ))}
-            
-           
+
+
           </div>
         </motion.div>
       </nav>

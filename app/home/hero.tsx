@@ -65,7 +65,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight">
-              Quality Car Spare Parts
+              Best Car Accessories in Qatar,Doha 
              
 
             </h1>
