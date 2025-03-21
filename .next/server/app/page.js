@@ -10,7 +10,7 @@ runtime.loadChunk("server/chunks/ssr/node_modules_next_dist_client_components_un
 runtime.loadChunk("server/chunks/ssr/node_modules_next_217142f4._.js");
 runtime.loadChunk("server/chunks/ssr/node_modules_@fortawesome_free-solid-svg-icons_index_mjs_2318e1a7._.js");
 runtime.loadChunk("server/chunks/ssr/node_modules_@fortawesome_free-brands-svg-icons_index_mjs_aae2e2bf._.js");
-runtime.loadChunk("server/chunks/ssr/node_modules_d92b039d._.js");
+runtime.loadChunk("server/chunks/ssr/node_modules_dc72c468._.js");
 runtime.loadChunk("server/chunks/ssr/_c2de146f._.js");
 runtime.getOrInstantiateRuntimeModule("[project]/.next-internal/server/app/page/actions.js [app-rsc] (server actions loader, ecmascript)", CHUNK_PUBLIC_PATH);
 runtime.getOrInstantiateRuntimeModule("[project]/node_modules/next/dist/esm/build/templates/app-page.js?page=/page { METADATA_0 => \"[project]/app/favicon.ico.mjs { IMAGE => \\\"[project]/app/favicon.ico (static in ecmascript)\\\" } [app-rsc] (structured image object, ecmascript, Next.js server component)\", MODULE_1 => \"[project]/app/layout.tsx [app-rsc] (ecmascript, Next.js server component)\", MODULE_2 => \"[project]/node_modules/next/dist/client/components/not-found-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_3 => \"[project]/node_modules/next/dist/client/components/forbidden-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_4 => \"[project]/node_modules/next/dist/client/components/unauthorized-error.js [app-rsc] (ecmascript, Next.js server component)\", MODULE_5 => \"[project]/app/page.tsx [app-rsc] (ecmascript, Next.js server component)\" } [app-rsc] (ecmascript)", CHUNK_PUBLIC_PATH);
