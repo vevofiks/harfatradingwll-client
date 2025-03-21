@@ -17,9 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Harfa Trading",
-  description: "best car accessories in qatar,doha",
+  title: "Harfa Trading | Best Car Accessories Wholesale in Qatar",
+  description: "Discover top-quality car accessories at wholesale prices in Qatar. Harfa Trading offers a wide range of products for all vehicle types, ensuring customer satisfaction.",
 };
+
 
 export default function RootLayout({
   children,

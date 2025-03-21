@@ -10,6 +10,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: 'Invalid credentials' }, { status: 401 });
   }
 
-  const token = await generateToken({ role: 'admin', username });
-  return NextResponse.json({ token });
+  try {
+    const token = await generateToken({ role: 'admin', username });
+    console.log('token in login api',token)
+    const tokenParts = token.split('.');
+const payloadBase64 = tokenParts[1];
+const payloadDecoded = Buffer.from(payloadBase64, 'base64').toString('utf8');
+console.log('Decoded payload:', payloadDecoded);
+    return NextResponse.json({ token });
+  } catch (error) {
+    console.error('Failed to create token:', error);
+    return NextResponse.json({ message: 'Token creation failed' }, { status: 500 });
+  }
 }

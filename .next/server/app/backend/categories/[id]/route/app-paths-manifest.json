@@ -1,0 +1,3 @@
+{
+  "/backend/categories/[id]/route": "app/backend/categories/[id]/route.js"
+}

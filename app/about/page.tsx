@@ -1,132 +1,238 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function About() {
   const features = [
     { 
-      icon: "fa-check-circle", 
-      text: "Genuine Parts",
-      description: "All our parts are sourced directly from authorized manufacturers"
+      icon: "fa-globe", 
+      title: "Global Network",
+      text: "International Sourcing",
+      description: "Direct partnerships with premium manufacturers in China, Dubai, Germany, Taiwan, and India"
     },
     { 
-      icon: "fa-truck", 
-      text: "Fast Delivery",
-      description: "Same-day delivery available across Qatar"
+      icon: "fa-box-open", 
+      title: "Product Range",
+      text: "Extensive Inventory",
+      description: "Over 10,000 premium car accessories carefully selected for quality and performance"
     },
     { 
-      icon: "fa-headset", 
-      text: "Expert Support",
-      description: "24/7 technical support from automotive experts"
+      icon: "fa-medal", 
+      title: "Market Leadership",
+      text: "Decade of Excellence",
+      description: "Setting industry standards in Qatar's automotive wholesale market since 2014"
     },
     { 
-      icon: "fa-shield-alt", 
-      text: "Quality Guarantee",
-      description: "All parts come with warranty and quality assurance"
+      icon: "fa-handshake", 
+      title: "Customer Success",
+      text: "Dedicated Support",
+      description: "Personalized service and expert guidance for every business partner"
     }
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
+  const founders = [
+    { 
+      name: "Abdul Raheem", 
+      role: "Chief Executive Officer",
+      description: "Visionary leader driving Harfa's growth and innovation",
+      image: "/assets/team/abdul-raheem.jpg"
+    },
+    { 
+      name: "Hashim", 
+      role: "Founding Partner",
+      description: "Oversees international partnerships and strategic planning",
+      image: "/assets/team/hashim.jpg"
+    },
+    { 
+      name: "Ali", 
+      role: "Founding Partner",
+      description: "Leads product development and quality assurance",
+      image: "/assets/team/ali.jpg"
+    },
+    { 
+      name: "Firoz", 
+      role: "Founding Partner",
+      description: "Manages operations and supply chain excellence",
+      image: "/assets/team/firoz.jpg"
+    },
+    { 
+      name: "Azeez", 
+      role: "Founding Partner",
+      description: "Directs customer relations and market expansion",
+      image: "/assets/team/azeez.jpg"
     }
-  }
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-  }
+  ]
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" 
-          style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, red 1px, transparent 0)',
-            backgroundSize: '40px 40px',
-          }}
-        />
-      </div>
-
-      <div className="container mx-auto px-4">
+    <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen">
+      {/* Hero Section */}
+      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/hero-bg.jpg"
+            alt="Automotive Excellence"
+            fill
+            style={{ objectFit: 'cover' }}
+            className="opacity-30"
+          />
+        </div>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          animate={{ opacity: 1, y: 0 }}
+          className="relative text-center px-4"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About <span className="text-red-500">Harfa Trading</span>
-          </h2>
-          <p className="max-w-3xl mx-auto text-gray-300 text-lg leading-relaxed">
-            With over a decade of experience in the automotive industry, Harfa Trading is your reliable source for quality car spare parts. 
-            We pride ourselves on offering genuine components at competitive prices.
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+            Driving <span className="text-red-500">Excellence</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+            Qatar's Premier Wholesale Partner for Automotive Excellence
           </p>
         </motion.div>
+      </div>
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto"
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-red-500/10 hover:border-red-500/30 transition-all duration-300 group"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <i className={`fas ${feature.icon} text-2xl text-white`}></i>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-red-500 transition-colors">
-                  {feature.text}
-                </h3>
-                <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
-                  {feature.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Stats Section */}
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-12">
+        {/* Our Story Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
+          className="mb-20"
         >
-          {[
-            { number: "10+", label: "Years Experience" },
-            { number: "5000+", label: "Happy Customers" },
-            { number: "15000+", label: "Parts Delivered" },
-            { number: "24/7", label: "Customer Support" }
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <motion.div 
-                className="text-4xl font-bold text-red-500 mb-2"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                {stat.number}
-              </motion.div>
-              <div className="text-gray-400">{stat.label}</div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Our <span className="text-red-500">Journey</span>
+            </h2>
+            <div className="w-24 h-1 bg-red-500 mx-auto"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/assets/about-image.jpg"
+                alt="Harfa Trading Facility"
+                fill
+                style={{ objectFit: 'cover' }}
+                className="hover:scale-105 transition-transform duration-700"
+              />
             </div>
-          ))}
+            <div className="space-y-6">
+              <h3 className="text-3xl font-semibold text-white">A Decade of Trust & Innovation</h3>
+              <p className="text-gray-300 leading-relaxed">
+                Since our establishment in 2014, Harfa Trading has revolutionized Qatar's automotive 
+                wholesale industry. What began as a vision shared by five passionate entrepreneurs 
+                has evolved into Qatar's most trusted source for premium car accessories.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/5 p-4 rounded-lg backdrop-blur-sm">
+                  <div className="text-3xl font-bold text-red-500">10+</div>
+                  <div className="text-gray-400">Years of Excellence</div>
+                </div>
+                <div className="bg-white/5 p-4 rounded-lg backdrop-blur-sm">
+                  <div className="text-3xl font-bold text-red-500">10K+</div>
+                  <div className="text-gray-400">Products Available</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Features Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Why Choose <span className="text-red-500">Harfa</span>
+            </h2>
+            <div className="w-24 h-1 bg-red-500 mx-auto"></div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -10 }}
+                className="bg-gradient-to-b from-white/10 to-white/5 rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:border-red-500/30 transition-all duration-300"
+              >
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-red-600 to-red-700 flex items-center justify-center mb-6">
+                  <i className={`fas ${feature.icon} text-2xl text-white`}></i>
+                </div>
+                <h4 className="text-xl font-semibold text-white mb-2">{feature.text}</h4>
+                <p className="text-gray-400">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Leadership Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Meet Our <span className="text-red-500">Leadership</span>
+            </h2>
+            <div className="w-24 h-1 bg-red-500 mx-auto mb-6"></div>
+            <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+              The visionaries shaping the future of automotive excellence in Qatar
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {founders.map((founder, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -10 }}
+                className="relative group"
+              >
+                <div className="bg-gradient-to-b from-gray-800/90 to-black/90 rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="relative h-[300px] overflow-hidden">
+                    {founder.image ? (
+                      <Image
+                        src={founder.image}
+                        alt={founder.name}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="group-hover:scale-110 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center">
+                        <i className="fas fa-user text-6xl text-white/50"></i>
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
+                  </div>
+                  
+                  <div className="p-6 relative z-10">
+                    <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-red-500 transition-colors">
+                      {founder.name}
+                    </h4>
+                    <p className="text-red-400 font-medium mb-3">{founder.role}</p>
+                    <p className="text-gray-400 leading-relaxed">{founder.description}</p>
+                    
+                    <div className="mt-4 pt-4 border-t border-gray-700/50">
+                      <div className="flex gap-3">
+                        <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-red-500 transition-colors">
+                          <i className="fab fa-linkedin-in text-white text-sm"></i>
+                        </a>
+                        <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-red-500 transition-colors">
+                          <i className="fab fa-twitter text-white text-sm"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Call to Action */}
@@ -134,17 +240,22 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-20 text-center"
+          className="text-center bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-12"
         >
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Partner with Qatar's Best?
+          </h3>
+          <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+            Join hundreds of successful businesses who trust Harfa Trading for their automotive needs
+          </p>
           <a 
             href="#contact" 
-            className="inline-block bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-xl hover:from-red-700 hover:to-red-800 transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-red-500/30"
+            className="inline-block bg-white text-red-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors duration-300 text-lg font-semibold shadow-xl"
           >
-            Get in Touch
+            Contact Us Today
           </a>
         </motion.div>
       </div>
-    </section>
+    </div>
   )
 } 

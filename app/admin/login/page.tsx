@@ -1,36 +1,59 @@
-'use client'
-import Image from 'next/image'
-import React from 'react'
-import {motion} from 'framer-motion'
+// app/admin/login/page.tsx
+'use client';
 
-const login = () => {
+import { useState } from 'react';
+import { TextField, Button, Container } from '@mui/material';
+import { useRouter } from 'next/navigation';
+
+export default function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const router = useRouter();
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const res = await fetch('/backend/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password }),
+    });
+    const data = await res.json();
+    if (data.token) {
+      console.log('token',data.token)
+      localStorage.setItem('adminToken', data.token);
+      router.push('/admin/dashboard');
+    } else {
+      alert(data.message);
+    }
+  };
+
   return (
-    <div className='w-full flex bg-gradient-to-br from-black/90 via-red-900/40 to-black/90 h-screen'>
-        <div className='flex-1 hidden md:block overflow-hidden'>
-            <Image src="https://imgs.search.brave.com/juw2_ymqgAX0yicjgtuHJovshrcLZ7HYjMMx_JxVTN0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL1Mv/YXBsdXMtbWVkaWEt/bGlicmFyeS1zZXJ2/aWNlLW1lZGlhL2Zj/MjI4NmM3LTdhNmQt/NGUxZi1iYzE3LTlm/MjM4MTllYTE4ZC5f/X0NSMCwwLDE5MjAs/MTE4OF9QVDBfU1g5/NzBfVjFfX18uanBn" alt='side imae'
-            width={100}
-            height={100}
-            className='w-full h-full'></Image>
-        </div>
-        <div className='bg-gradient-to-br from-black/90 via-red-900/40 to-black/90 h-screen flex-1'>
-        <motion.div
-        initial={{y:20}}
-        animate={{y:0}}
-        transition={{duration:0.2,ease:'easeInOut'}}
-        className='flex justify-center'>
-            <p className='text-3xl font-bold'>welcome Home</p>
-            </motion.div>
-        <div className='bg-amber-300 border-2  border-amber-500 rounded-2xl m-10 h-auto flex-col justify-center items-center'>
-        <form action="" className=''>
-                <input  className='block border-2 rounded-2xl m-3' type="email" name="" id="" />
-                <input className='block border-2 rounded-2xl m-3' type="password" name="" id="" />
-                <button className='block border-2 rounded-2xl m-3' type="submit">login</button>
-            </form>
-        </div>
-           
-        </div>
-    </div>
-  )
+    <Container className=' w-72 h-svh m-4 rounded-4xl'>
+      <form onSubmit={handleLogin}>
+        <TextField
+         InputProps={{ style: { color: 'white' } }}
+         label="Username"
+         value={username}
+         onChange={(e) => setUsername(e.target.value)}
+         fullWidth
+         margin="normal"
+         className="border border-b-emerald-600 focus:border-blue-700" // Border color + focus effect
+         InputLabelProps={{ style: { color: 'blue' } }} // Label color
+        />
+        <TextField
+          InputProps={{ style: { color: 'white' } }} // Text inside input
+          label="Password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          fullWidth
+          margin="normal"
+          InputLabelProps={{ style: { color: 'blue' } }} // Label color
+        />
+        <Button type="submit" variant="contained" fullWidth>
+          Login
+        </Button>
+      </form>
+    </Container>
+  );
 }
-
-export default login
