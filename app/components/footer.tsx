@@ -1,19 +1,22 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faTwitter, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Image from 'next/image'
 
 export default function Footer() {
   const socialLinks = [
-    { icon: "fa-facebook", url: "#", label: "Facebook" },
-    { icon: "fa-twitter", url: "#", label: "Twitter" },
-    { icon: "fa-instagram", url: "#", label: "Instagram" },
-    { icon: "fa-linkedin", url: "#", label: "LinkedIn" }
-  ]
+    { icon: faFacebook, url: "#", label: "Facebook" },
+    { icon: faTwitter, url: "#", label: "Twitter" },
+    { icon: faInstagram, url: "#", label: "Instagram" },
+    { icon: faLinkedin, url: "#", label: "LinkedIn" }
+  ];
 
   const contactInfo = {
     email: "info@harfatrading.com",
     sales: "sales@harfatrading.com",
     phone: "+1 (234) 567-8900",
     address: "123 Trading Street, Business District"
-  }
+  };
 
   return (
     <footer className="bg-gray-800 text-white pt-16">
@@ -28,7 +31,7 @@ export default function Footer() {
                 alt="Harfa Trading Logo"
                 fill
                 style={{ objectFit: 'contain' }}
-                className="brightness-0 invert" // Makes the logo white
+                className="brightness-0 invert"
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -52,23 +55,23 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-blue-400">Contact Us</h4>
             <ul className="space-y-2">
               <li className="flex items-center gap-2">
-                <i className="fas fa-envelope text-blue-400"></i>
+                <FontAwesomeIcon icon={faEnvelope} className="text-blue-400" />
                 <a href={`mailto:${contactInfo.email}`} className="text-gray-400 hover:text-white transition-colors">
                   {contactInfo.email}
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <i className="fas fa-envelope text-blue-400"></i>
+                <FontAwesomeIcon icon={faEnvelope} className="text-blue-400" />
                 <a href={`mailto:${contactInfo.sales}`} className="text-gray-400 hover:text-white transition-colors">
                   {contactInfo.sales}
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <i className="fas fa-phone text-blue-400"></i>
+                <FontAwesomeIcon icon={faPhone} className="text-blue-400" />
                 <span className="text-gray-400">{contactInfo.phone}</span>
               </li>
               <li className="flex items-center gap-2">
-                <i className="fas fa-map-marker-alt text-blue-400"></i>
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="text-blue-400" />
                 <span className="text-gray-400">{contactInfo.address}</span>
               </li>
             </ul>
@@ -85,7 +88,7 @@ export default function Footer() {
                   aria-label={link.label}
                   className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-500 transition-colors"
                 >
-                  <i className={`fab ${link.icon}`}></i>
+                  <FontAwesomeIcon icon={link.icon} className="text-white" />
                 </a>
               ))}
             </div>
@@ -107,4 +110,4 @@ export default function Footer() {
       </div>
     </footer>
   )
-} 
+}
