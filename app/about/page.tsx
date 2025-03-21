@@ -9,13 +9,13 @@ export default function About() {
       icon: "fa-globe", 
       title: "Global Network",
       text: "International Sourcing",
-      description: "Direct partnerships with premium manufacturers in China, Dubai, Germany, Taiwan, and India"
+      description: "Direct partnerships with  manufacturers in China, Dubai, Germany, Taiwan, and India"
     },
     { 
       icon: "fa-box-open", 
       title: "Product Range",
       text: "Extensive Inventory",
-      description: "Over 10,000 premium car accessories carefully selected for quality and performance"
+      description: "Over 10,000  car accessories carefully selected for quality and performance"
     },
     { 
       icon: "fa-medal", 
@@ -99,7 +99,7 @@ export default function About() {
               <p className="text-gray-300 leading-relaxed">
                 Since our establishment in 2014, Harfa Trading has revolutionized Qatar's automotive 
                 wholesale industry. What began as a vision shared by five passionate entrepreneurs 
-                has evolved into Qatar's most trusted source for premium car accessories.
+                has evolved into Qatar's most trusted source for  car accessories.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/5 p-4 rounded-lg backdrop-blur-sm">
