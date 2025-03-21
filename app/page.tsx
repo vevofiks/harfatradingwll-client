@@ -4,6 +4,7 @@ import Hero from './home/hero';
 import Products from './home/products';
 import About from './about/page';
 import Reviews from './home/review';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
      <About />
      <Reviews />
      <Footer/>
+     <SpeedInsights/>
     </>
   );
 }
