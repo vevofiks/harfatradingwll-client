@@ -6,8 +6,8 @@ import {
   Button, Switch, Modal, Box, Typography, IconButton,
   Paper
 } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
 import InboxIcon from '@mui/icons-material/Inbox';
+import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
